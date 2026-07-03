@@ -1,0 +1,44 @@
+---
+---
+@import "minima";
+
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.coffee-box {
+  margin: 40px auto 0;
+  padding: 24px;
+  max-width: 420px;
+  text-align: center;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+
+  .coffee-image {
+    max-width: 220px;
+    border-radius: 8px;
+  }
+
+  .coffee-title {
+    margin: 12px 0 4px;
+    font-size: 1.1em;
+  }
+
+  .coffee-button {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 10px 22px;
+    background: #2a7ae2;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+
+    &:hover {
+      background: #1756a9;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}

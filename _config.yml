@@ -1,0 +1,21 @@
+title: My unexpected journey
+description: I planned to travel the world, life gave me cancer
+url: "https://norway-life.com"
+baseurl: ""
+timezone: Europe/Oslo
+permalink: /:year/:month/:day/:title/
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+header_pages:
+  - about-me.html
+  - contact-me.html
+show_excerpts: true
+minima:
+  date_format: "%B %-d, %Y"
+author:
+  name: Nhu Phuong
+# Where the "Buy me a coffee" button links to
+coffee_url: "https://buymeacoffee.com/fabricgirl"
