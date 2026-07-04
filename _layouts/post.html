@@ -1,23 +1,55 @@
 ---
 layout: default
 ---
-<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+{% assign series = site.categories[site.series_name] | sort: "date" %}
+{% assign chapter = 0 %}
+{% assign prev_post = false %}
+{% assign next_post = false %}
+{% for p in series %}
+  {% if p.url == page.url %}
+    {% assign chapter = forloop.index %}
+    {% unless forloop.first %}
+      {% assign prev_index = forloop.index0 | minus: 1 %}
+      {% assign prev_post = series[prev_index] %}
+    {% endunless %}
+    {% unless forloop.last %}
+      {% assign next_post = series[forloop.index] %}
+    {% endunless %}
+  {% endif %}
+{% endfor %}
 
-  <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="post-meta">
-      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        {{ page.date | date: date_format }}
-      </time>
+<article>
+  <div class="post-head">
+    {% if chapter > 0 %}
+    <span class="eyebrow"><a href="/my-unexpected-journey/">{{ site.series_name }}</a> · Chapter {{ chapter }}</span>
+    {% else %}
+    <span class="eyebrow"><a href="/life-in-norway/">Life in Norway</a></span>
+    {% endif %}
+    <h1>{{ page.title }}</h1>
+    {% assign words = content | strip_html | number_of_words %}
+    <p class="meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
+      · {{ words | divided_by: 200 | at_least: 1 }} min read
     </p>
-  </header>
+  </div>
 
-  <div class="post-content e-content" itemprop="articleBody">
+  <div class="post-body">
     {{ content }}
   </div>
 
   {% include coffee.html %}
 
-  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+  {% if chapter > 0 %}
+  <nav class="pn" aria-label="Chapters">
+    {% if prev_post %}
+    <a href="{{ prev_post.url | relative_url }}">← Previous chapter
+      <strong>{{ prev_post.title }}</strong></a>
+    {% endif %}
+    {% if next_post %}
+    <a class="next" href="{{ next_post.url | relative_url }}">Next chapter →
+      <strong>{{ next_post.title }}</strong></a>
+    {% endif %}
+  </nav>
+  {% endif %}
+  <div class="post-foot-space"></div>
 </article>

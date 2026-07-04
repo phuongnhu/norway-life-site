@@ -1,0 +1,23 @@
+---
+layout: default
+title: My unexpected journey
+permalink: /my-unexpected-journey/
+---
+<main class="wrap">
+  <section class="block topblock">
+    <div class="block-head">
+      <h3>My unexpected journey</h3>
+    </div>
+    <p class="block-sub">I planned to travel the world, life gave me cancer. Diagnosed with breast cancer at 37, in a country far from where I grew up. This is the whole story, written as it happened, chapter by chapter. Start at chapter 1.</p>
+    <ol class="chapters">
+      {% assign series = site.categories[site.series_name] | sort: "date" %}
+      {% for p in series %}
+      <li><a href="{{ p.url | relative_url }}">
+        <span class="num">Ch. {% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+        <span class="t">{{ p.title }}</span>
+        <span class="meta">{{ p.date | date: "%d %b %Y" }}</span>
+      </a></li>
+      {% endfor %}
+    </ol>
+  </section>
+</main>

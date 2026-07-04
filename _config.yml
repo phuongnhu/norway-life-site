@@ -1,21 +1,17 @@
-title: My unexpected journey
-description: I planned to travel the world, life gave me cancer
+title: Norway Life
+tagline: as actually lived
+description: "Life in Norway, as actually lived. The real costs, the real systems, the real winters, and one unexpected cancer journey."
 url: "https://norway-life.com"
 baseurl: ""
 timezone: Europe/Oslo
 permalink: /:year/:month/:day/:title/
-theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
-header_pages:
-  - about-me.html
-  - contact-me.html
-show_excerpts: true
-minima:
-  date_format: "%B %-d, %Y"
 author:
-  name: Nhu Phuong
+  name: Norway Life
 # Where the "Buy me a coffee" button links to
 coffee_url: "https://buymeacoffee.com/fabricgirl"
+# Name of the cancer series category (single source of truth for layouts)
+series_name: "My unexpected journey"

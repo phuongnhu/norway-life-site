@@ -1,0 +1,22 @@
+---
+layout: default
+title: Life in Norway
+permalink: /life-in-norway/
+---
+<main class="wrap">
+  <section class="block topblock">
+    <div class="block-head">
+      <h3>Life in Norway</h3>
+    </div>
+    <p class="block-sub">Fifteen years in, still taking notes. The costs, the systems, the winters, and the everyday life between them. Newest first.</p>
+    <ol class="chapters plain">
+      {% assign norway = site.categories["Life in Norway"] %}
+      {% for p in norway %}
+      <li><a href="{{ p.url | relative_url }}">
+        <span class="t">{{ p.title }}</span>
+        <span class="meta">{{ p.date | date: "%d %b %Y" }}</span>
+      </a></li>
+      {% endfor %}
+    </ol>
+  </section>
+</main>

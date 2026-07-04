@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  {% feed_meta %}
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    {% if page.url == "/" %}
+    <div class="masthead">
+      <a class="wordmark" href="/">Norway Life<span class="dot">.</span></a>
+      <p class="tagline">as <em>actually</em> lived</p>
+    </div>
+    {% else %}
+    <div class="masthead compact">
+      <a class="wordmark small" href="/">Norway Life<span class="dot">.</span></a>
+    </div>
+    {% endif %}
+    <nav class="site" aria-label="Main">
+      <a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a>
+      <a href="/my-unexpected-journey/" {% if page.url == "/my-unexpected-journey/" %}aria-current="page"{% endif %}>My unexpected journey</a>
+      <a href="/life-in-norway/" {% if page.url == "/life-in-norway/" %}aria-current="page"{% endif %}>Life in Norway</a>
+      <a href="/about/" {% if page.url == "/about/" %}aria-current="page"{% endif %}>About</a>
+    </nav>
+  </div>
+</header>
+
+{{ content }}
+
+<footer class="site">
+  <div class="wrap row">
+    <span>Norway Life · as actually lived</span>
+    <a href="mailto:support@norway-life.com">support@norway-life.com</a>
+    <a href="/contact-me/">Contact</a>
+    <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+    <a href="{{ site.coffee_url }}" target="_blank" rel="noopener noreferrer">Buy me a coffee</a>
+  </div>
+</footer>
+
+</body>
+</html>

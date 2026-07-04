@@ -1,0 +1,76 @@
+---
+layout: default
+---
+<main class="wrap">
+
+  {% assign latest = site.posts | first %}
+  <article class="featured">
+    <div>
+      <span class="eyebrow">Latest</span>
+      <h2><a href="{{ latest.url | relative_url }}">{{ latest.title }}</a></h2>
+      <p class="excerpt">{{ latest.excerpt | strip_html | normalize_whitespace | truncate: 240 }}</p>
+      <p class="meta">
+        {{ latest.date | date: "%-d %b %Y" }} ·
+        {% if latest.categories contains site.series_name %}{{ site.series_name }}{% else %}Life in Norway{% endif %}
+      </p>
+      <a class="readmore" href="{{ latest.url | relative_url }}">Read the post →</a>
+    </div>
+    <div class="cover">
+      {% if latest.image %}<img src="{{ latest.image | relative_url }}" alt="">{% endif %}
+    </div>
+  </article>
+
+  {% assign series = site.categories[site.series_name] | sort: "date" %}
+  <section class="block">
+    <div class="block-head">
+      <h3>My unexpected journey</h3>
+      <a class="all" href="/my-unexpected-journey/">All {{ series | size }} chapters →</a>
+    </div>
+    <p class="block-sub">I planned to travel the world, life gave me cancer. The whole story, from the first suspicion to where I am now, written as it happened. New here? Start with chapter 1.</p>
+    <ol class="chapters">
+      {% for p in series limit: 5 %}
+      <li><a href="{{ p.url | relative_url }}">
+        <span class="num">Ch. {% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+        <span class="t">{{ p.title }}</span>
+        <span class="meta">{{ p.date | date: "%d %b %Y" }}</span>
+      </a></li>
+      {% endfor %}
+    </ol>
+  </section>
+
+  <section class="block">
+    <div class="block-head">
+      <h3>Life in Norway</h3>
+      <a class="all" href="/life-in-norway/">All posts →</a>
+    </div>
+    <p class="block-sub">Fifteen years in, still taking notes. The costs, the systems, the winters, and the everyday life between them.</p>
+    <div class="cards">
+      {% assign norway = site.categories["Life in Norway"] %}
+      {% for p in norway limit: 4 %}
+      <article class="card">
+        <span class="eyebrow">{{ p.date | date: "%-d %b %Y" }}</span>
+        <h4><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h4>
+        <p>{{ p.excerpt | strip_html | normalize_whitespace | truncate: 150 }}</p>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="coming">
+      <span class="eyebrow">Coming soon</span>
+      <ul>
+        <li>Wig, is it worth it?</li>
+        <li>Buying an apartment in Norway</li>
+        <li>A tourist in my own city: Oslo</li>
+        <li>Sykepenger: how sick pay from NAV works</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="about-teaser">
+    <span class="eyebrow">About this blog</span>
+    <blockquote>
+      "I moved to Norway in 2011 to study. To be honest, I didn't choose Norway passionately, it's more like <strong>Norway chose me</strong>."
+    </blockquote>
+    <a class="readmore" href="/about/">The whole story →</a>
+  </section>
+
+</main>
