@@ -4,6 +4,7 @@ title: "My Third Apartment in Norway, and Why I Always Buy Brand New"
 date: 2026-07-05 00:30:00 +0200
 categories: ["Life in Norway"]
 image: /images/2026/07/third-apartment-cover.jpg
+description: "I have bought three apartments in Norway and every one was brand new. Why I skip bidding wars and renovation projects, how the waiting time became my savings plan, and the honest downsides of buying new."
 ---
 
 ![Illustration of an apartment floor plan drawing turning into a warm, furnished home](/images/2026/07/third-apartment-cover.jpg)
