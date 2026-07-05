@@ -15,3 +15,10 @@ author:
 coffee_url: "https://buymeacoffee.com/fabricgirl"
 # Name of the cancer series category (single source of truth for layouts)
 series_name: "My unexpected journey"
+# Default social share image for posts without their own cover
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      image: /images/norway-life-card.png
