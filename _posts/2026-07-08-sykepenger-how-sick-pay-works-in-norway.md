@@ -26,6 +26,8 @@ If you are employed in Norway and you get too sick to work, this is the deal:
 
 One thing worth knowing if you freelance or run your own company: the rules are less generous. Self-employed people get 80% and only from day 17, unless they buy extra insurance from NAV. As an employee you are in the comfortable seat here.
 
+And a small honest disclaimer: my situation was the simple one, one employer and one salary. If you have more than one employer when you get sick, or business income on top of your normal salary, the calculation gets more complicated than what I describe here. I won't pretend to know those combinations, but NAV can explain all of it, so ask them directly instead of guessing.
+
 ### My timeline: from 50% to 100%, not in the order you'd expect
 
 The cancer came so suddenly, and treatment had to start right away. Logically I understood it, but somehow I found it difficult to "integrate" cancer into my schedule. So at the beginning I was only on 50% sick leave, while I was halfway through egg freezing with hormone injections on a strict clock. I remember being out with colleagues at an after-work thing and having to rush home to take my injection on time. My doctor wondered a bit why I wasn't on full sick leave yet, treatment should be prioritized. I knew that. It just came too suddenly for my head to catch up.
