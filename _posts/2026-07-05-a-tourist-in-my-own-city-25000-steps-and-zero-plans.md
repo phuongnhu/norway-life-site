@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A Tourist in My Own City: 25,000 Steps and Zero Plans"
+title: "25,000 Steps and Zero Plans"
 date: 2026-07-05 18:00:00 +0200
 categories: ["Life in Norway"]
 series: "A tourist in my own city"

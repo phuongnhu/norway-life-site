@@ -145,6 +145,13 @@ ol.chapters .meta{text-align:right}
   border:1px dashed var(--line); border-radius:99px; padding:5px 14px;
 }
 
+.section-links{margin-top:26px; display:flex; flex-wrap:wrap; gap:10px}
+.section-links a{
+  font-family:var(--sans); font-size:.85rem; font-weight:600; color:var(--falu);
+  border:1px solid var(--line); border-radius:99px; padding:8px 16px; background:var(--card);
+}
+.section-links a:hover{color:var(--falu-deep); border-color:var(--falu)}
+
 .about-teaser{padding:52px 0}
 .about-teaser blockquote{
   font-size:1.25rem; font-style:italic; line-height:1.5;
