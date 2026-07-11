@@ -17,6 +17,22 @@ layout: default
     {% endunless %}
   {% endif %}
 {% endfor %}
+{% assign s_prev = false %}
+{% assign s_next = false %}
+{% if page.series %}
+  {% assign walkposts = site.posts | where: "series", page.series | sort: "date" %}
+  {% for p in walkposts %}
+    {% if p.url == page.url %}
+      {% unless forloop.first %}
+        {% assign s_prev_index = forloop.index0 | minus: 1 %}
+        {% assign s_prev = walkposts[s_prev_index] %}
+      {% endunless %}
+      {% unless forloop.last %}
+        {% assign s_next = walkposts[forloop.index] %}
+      {% endunless %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
 
 <article>
   <div class="post-head">
@@ -50,6 +66,18 @@ layout: default
     {% if next_post %}
     <a class="next" href="{{ next_post.url | relative_url }}">Next chapter →
       <strong>{{ next_post.title }}</strong></a>
+    {% endif %}
+  </nav>
+  {% endif %}
+  {% if s_prev or s_next %}
+  <nav class="pn" aria-label="{{ page.series }}">
+    {% if s_prev %}
+    <a href="{{ s_prev.url | relative_url }}">← Previous in the series
+      <strong>{{ s_prev.title }}</strong></a>
+    {% endif %}
+    {% if s_next %}
+    <a class="next" href="{{ s_next.url | relative_url }}">Next in the series →
+      <strong>{{ s_next.title }}</strong></a>
     {% endif %}
   </nav>
   {% endif %}
