@@ -2,7 +2,6 @@
 layout: post
 title: "Sales Season and a Classic Walk to the Palace"
 date: 2026-07-11 18:30:00 +0200
-categories: ["Life in Norway"]
 series: "A tourist in my own city"
 image: /images/2026/07/tourist2-favorite-cafe.jpg
 description: "A 5 km Saturday walk from Grünerløkka to the Royal Palace: world-champion coffee for 60 kr, vintage racks in the sales season, and a city center full of red football shirts. Total bill: 347 kr."

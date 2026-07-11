@@ -22,6 +22,8 @@ layout: default
   <div class="post-head">
     {% if chapter > 0 %}
     <span class="eyebrow"><a href="/my-unexpected-journey/">{{ site.series_name }}</a> · Chapter {{ chapter }}</span>
+    {% elsif page.series %}
+    <span class="eyebrow"><a href="/tourist-in-my-own-city/">{{ page.series }}</a></span>
     {% else %}
     <span class="eyebrow"><a href="/life-in-norway/">Life in Norway</a></span>
     {% endif %}

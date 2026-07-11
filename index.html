@@ -11,7 +11,7 @@ layout: default
       <p class="excerpt">{{ latest.description | default: latest.excerpt | strip_html | normalize_whitespace | truncate: 240 }}</p>
       <p class="meta">
         {{ latest.date | date: "%-d %b %Y" }} ·
-        {% if latest.categories contains site.series_name %}{{ site.series_name }}{% else %}Life in Norway{% endif %}
+        {% if latest.categories contains site.series_name %}{{ site.series_name }}{% elsif latest.series %}{{ latest.series }}{% else %}Life in Norway{% endif %}
       </p>
       <a class="readmore" href="{{ latest.url | relative_url }}">Read the post →</a>
     </div>
@@ -25,7 +25,7 @@ layout: default
       <h3>The latest</h3>
     </div>
     <div class="cards">
-      {% for p in site.posts offset: 1 limit: 4 %}
+      {% for p in site.posts limit: 4 %}
       <article class="card">
         <span class="eyebrow">{{ p.date | date: "%-d %b %Y" }} · {% if p.series %}{{ p.series }}{% elsif p.categories contains site.series_name %}{{ site.series_name }}{% else %}Life in Norway{% endif %}</span>
         <h4><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h4>
@@ -33,11 +33,40 @@ layout: default
       </article>
       {% endfor %}
     </div>
-    <div class="section-links">
-      <a href="/life-in-norway/">Life in Norway →</a>
-      <a href="/tourist-in-my-own-city/">Tourist in my own city →</a>
-      <a href="/my-unexpected-journey/">My unexpected journey →</a>
+  </section>
+
+  <section class="block">
+    <div class="block-head">
+      <h3>Life in Norway</h3>
+      <a class="all" href="/life-in-norway/">All posts →</a>
     </div>
+    <p class="block-sub">Fifteen years in, still taking notes. The costs, the systems, the winters, and the everyday life between them.</p>
+    <ol class="chapters plain">
+      {% assign norway = site.categories["Life in Norway"] %}
+      {% for p in norway limit: 5 %}
+      <li><a href="{{ p.url | relative_url }}">
+        <span class="t">{{ p.title }}</span>
+        <span class="meta">{{ p.date | date: "%d %b %Y" }}</span>
+      </a></li>
+      {% endfor %}
+    </ol>
+  </section>
+
+  <section class="block">
+    <div class="block-head">
+      <h3>A tourist in my own city</h3>
+      <a class="all" href="/tourist-in-my-own-city/">All posts →</a>
+    </div>
+    <p class="block-sub">One real day out in Oslo per post: honest verdicts, real prices, my own photos. Some days famous, some days very local.</p>
+    <ol class="chapters plain">
+      {% assign walks = site.posts | where: "series", "A tourist in my own city" %}
+      {% for p in walks limit: 5 %}
+      <li><a href="{{ p.url | relative_url }}">
+        <span class="t">{{ p.title }}</span>
+        <span class="meta">{{ p.date | date: "%d %b %Y" }}</span>
+      </a></li>
+      {% endfor %}
+    </ol>
   </section>
 
   {% assign series = site.categories[site.series_name] | sort: "date" %}
