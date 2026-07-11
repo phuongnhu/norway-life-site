@@ -17,6 +17,22 @@ layout: default
     {% endunless %}
   {% endif %}
 {% endfor %}
+{% assign lin_prev = false %}
+{% assign lin_next = false %}
+{% if chapter == 0 and page.series == nil and page.categories contains "Life in Norway" %}
+  {% assign linposts = site.categories["Life in Norway"] | sort: "date" %}
+  {% for p in linposts %}
+    {% if p.url == page.url %}
+      {% unless forloop.first %}
+        {% assign lin_prev_index = forloop.index0 | minus: 1 %}
+        {% assign lin_prev = linposts[lin_prev_index] %}
+      {% endunless %}
+      {% unless forloop.last %}
+        {% assign lin_next = linposts[forloop.index] %}
+      {% endunless %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
 {% assign s_prev = false %}
 {% assign s_next = false %}
 {% if page.series %}
@@ -78,6 +94,18 @@ layout: default
     {% if s_next %}
     <a class="next" href="{{ s_next.url | relative_url }}">Next in the series →
       <strong>{{ s_next.title }}</strong></a>
+    {% endif %}
+  </nav>
+  {% endif %}
+  {% if lin_prev or lin_next %}
+  <nav class="pn" aria-label="Life in Norway">
+    {% if lin_prev %}
+    <a href="{{ lin_prev.url | relative_url }}">← Previous in Life in Norway
+      <strong>{{ lin_prev.title }}</strong></a>
+    {% endif %}
+    {% if lin_next %}
+    <a class="next" href="{{ lin_next.url | relative_url }}">Next in Life in Norway →
+      <strong>{{ lin_next.title }}</strong></a>
     {% endif %}
   </nav>
   {% endif %}
