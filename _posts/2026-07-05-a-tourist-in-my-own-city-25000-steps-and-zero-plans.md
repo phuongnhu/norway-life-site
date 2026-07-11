@@ -3,8 +3,9 @@ layout: post
 title: "A Tourist in My Own City: 25,000 Steps and Zero Plans"
 date: 2026-07-05 18:00:00 +0200
 categories: ["Life in Norway"]
+series: "A tourist in my own city"
 image: /images/2026/07/fjaerkonfekt-coconut-mango-cake.jpg
-description: "I love being a tourist in my own city. Day 1: 25,000 steps across Oslo, wild strawberries, cakes shaped like fruits, and a beach club I never knew existed. With all the real prices."
+description: "I love being a tourist in my own city. 25,000 steps across Oslo, wild strawberries, cakes shaped like fruits, and a beach club I never knew existed. With all the real prices."
 ---
 
 ![A cake shaped like half a coconut, filled with cream and fresh mango, on a café terrace](/images/2026/07/fjaerkonfekt-coconut-mango-cake.jpg)

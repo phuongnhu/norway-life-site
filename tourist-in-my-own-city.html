@@ -1,0 +1,23 @@
+---
+layout: default
+title: A tourist in my own city
+permalink: /tourist-in-my-own-city/
+description: "One real day out in Oslo per post: honest verdicts, real prices, my own photos. Some days famous, some days very local."
+---
+<main class="wrap">
+  <section class="block topblock">
+    <div class="block-head">
+      <h3>A tourist in my own city</h3>
+    </div>
+    <p class="block-sub">I love being a tourist in my own city, and I do it regularly. One real day out in Oslo per post: honest verdicts, real prices, my own photos. Some days are the famous places from the guidebooks, some days are very local. Newest first.</p>
+    <ol class="chapters plain">
+      {% assign walks = site.posts | where: "series", "A tourist in my own city" %}
+      {% for p in walks %}
+      <li><a href="{{ p.url | relative_url }}">
+        <span class="t">{{ p.title }}</span>
+        <span class="meta">{{ p.date | date: "%d %b %Y" }}</span>
+      </a></li>
+      {% endfor %}
+    </ol>
+  </section>
+</main>
