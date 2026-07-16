@@ -1,0 +1,23 @@
+# One-time helper for the July 2026 trip — safe to delete afterwards.
+name: Scheduled site rebuild
+on:
+  schedule:
+    # July 25, 06:45 and 08:00 UTC (08:45 and 10:00 Oslo time) — publishes the
+    # future-dated anniversary post; second run is a backup in case the first is skipped.
+    - cron: "45 6 25 7 *"
+    - cron: "0 8 25 7 *"
+  workflow_dispatch:
+
+permissions:
+  pages: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Request GitHub Pages build
+        run: |
+          curl -sf -X POST \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/${{ github.repository }}/pages/builds
