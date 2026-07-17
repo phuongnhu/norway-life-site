@@ -2,6 +2,10 @@
 name: Scheduled site rebuild
 on:
   schedule:
+    # July 18, 06:15 and 07:30 UTC (08:15 and 09:30 Oslo time) — publishes the
+    # future-dated wig post; second run is a backup in case the first is skipped.
+    - cron: "15 6 18 7 *"
+    - cron: "30 7 18 7 *"
     # July 25, 06:45 and 08:00 UTC (08:45 and 10:00 Oslo time) — publishes the
     # future-dated anniversary post; second run is a backup in case the first is skipped.
     - cron: "45 6 25 7 *"
