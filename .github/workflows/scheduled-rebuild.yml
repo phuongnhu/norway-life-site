@@ -1,15 +1,11 @@
-# One-time helper for the July 2026 trip — safe to delete afterwards.
+# One-time helper for scheduled posts — safe to delete after the post is live.
 name: Scheduled site rebuild
 on:
   schedule:
-    # July 18, 06:15 and 07:30 UTC (08:15 and 09:30 Oslo time) — publishes the
-    # future-dated wig post; second run is a backup in case the first is skipped.
-    - cron: "15 6 18 7 *"
-    - cron: "30 7 18 7 *"
-    # July 25, 06:45 and 08:00 UTC (08:45 and 10:00 Oslo time) — publishes the
-    # future-dated anniversary post; second run is a backup in case the first is skipped.
-    - cron: "45 6 25 7 *"
-    - cron: "0 8 25 7 *"
+    # Oct 11, 06:15 and 07:30 UTC (08:15 and 09:30 Oslo time) — publishes the
+    # future-dated radiation post (dated 08:00 +0200); second run is a backup.
+    - cron: "15 6 11 10 *"
+    - cron: "30 7 11 10 *"
   workflow_dispatch:
 
 permissions:
